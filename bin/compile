@@ -31,6 +31,7 @@ CLJ_TOOL_VERSION="394"
 CLJ_TGZ="clojure-tools-${CLJ_VERSION}.${CLJ_TOOL_VERSION}.tar.gz"
 CLJ_URL="https://download.clojure.org/install/clojure-tools-${CLJ_VERSION}.${CLJ_TOOL_VERSION}.tar.gz"
 CLJ_CACHE="$CACHE_DIR/$CLJ_TGZ"
+CLJ_CACHE_EXPAND="$CACHE_DIR/clojure-tools/"
 CLJ_INSTALL="$BUILD_DIR/.clj/"
 
 echo "-----> Installing clojure"
@@ -41,7 +42,7 @@ curl --retry 3 --silent --show-error --max-time 60 -L -o $CLJ_CACHE $CLJ_URL
 mkdir -p $CLJ_INSTALL
 tar xzvf $CLJ_CACHE
 
-$CLJ_CACHE/install.sh $CLJ_INSTALL
+$CLJ_CACHE_EXPAND/install.sh $CLJ_INSTALL
 
 # unpack existing cache
 CACHED_DIRS=".m2 node_modules"
