@@ -39,7 +39,7 @@ mkdir -p $(dirname $CLJ_CACHE)
 curl --retry 3 --silent --show-error --max-time 60 -L -o $CLJ_CACHE $CLJ_URL
 
 mkdir -p $CLJ_INSTALL
-tar xzf $CLJ_CACHE
+tar xzvf $CLJ_CACHE
 
 $CLJ_CACHE/install.sh $CLJ_INSTALL
 
